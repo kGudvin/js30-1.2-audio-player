@@ -44,18 +44,10 @@ function loadTrack(trackIndex) {
 function playPauseTrack() {
 	if (isPlaying) {
 		audio.pause()
-		playPauseButton.innerHTML = `<img
-		src="./assets/svg/play.png"
-		alt="play-pause"
-		class="control-button"
-	/>`
+		playPauseButton.src = './assets/svg/play.png'
 	} else {
 		audio.play()
-		playPauseButton.innerHTML = `<img
-						src="./assets/svg/pause.png"
-						alt="pause"
-						class="control-button"
-					/>`
+		playPauseButton.src = './assets/svg/pause.png'
 	}
 	isPlaying = !isPlaying
 }
