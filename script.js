@@ -33,6 +33,12 @@ function loadTrack(trackIndex) {
 	trackTitle.textContent = track.title
 	trackArtist.textContent = track.artist
 	trackCover.src = track.cover
+
+	document.getElementById(
+		'player'
+	).style.backgroundImage = `url(${track.cover})`
+
+	document.body.style.setProperty('--background-image', `url(${track.cover})`)
 }
 
 function playPauseTrack() {
@@ -41,16 +47,14 @@ function playPauseTrack() {
 		playPauseButton.innerHTML = `<img
 		src="./assets/svg/play.png"
 		alt="play-pause"
-		width="40"
-		height="40"
+		class="control-button"
 	/>`
 	} else {
 		audio.play()
 		playPauseButton.innerHTML = `<img
 						src="./assets/svg/pause.png"
 						alt="pause"
-						width="40"
-						height="40"
+						class="control-button"
 					/>`
 	}
 	isPlaying = !isPlaying
